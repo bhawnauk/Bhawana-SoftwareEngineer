@@ -1,6 +1,6 @@
 import { Link, useRoute, isActivePath } from '../router';
 import { profile } from '../data';
-import { IconGithub, IconLinkedin } from './Icons';
+import {  IconLinkedin } from './Icons';
 
 const pages = [
   { to: '/', label: 'Home' },

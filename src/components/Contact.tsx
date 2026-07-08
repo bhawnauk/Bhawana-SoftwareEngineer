@@ -1,5 +1,5 @@
 import { profile } from '../data';
-import { IconMail, IconGithub, IconLinkedin, IconArrow } from './Icons';
+import { IconMail, IconLinkedin, IconArrow } from './Icons';
 
 export default function Contact() {
   return (
