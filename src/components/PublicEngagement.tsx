@@ -3,8 +3,8 @@ import { publicEngagement} from '../data';
 export default function PublicEngagement() {
   return (
     <section>
-      <p className="text-xl font-bold tracking-wide text-ember mb-2">PUBLIC ENGAGEMENT</p>
-      <h2 className="font-display text-xl text-paper mb-8 ">Demonstrating Impact and  Leadership apart from Technical Skills</h2>
+      <p className="text-xl font-bold tracking-wide text-ember mb-2">Leadership and Public Engagement</p>
+      <h2 className="font-display text-xl text-paper mb-8 ">From on-camera to in-code leadership, either way, is translating complexity.</h2>
 
      <div>
          <ol className="flex flex-col">
@@ -25,12 +25,13 @@ export default function PublicEngagement() {
                 ))}
               </ul>
               <br/>
-    
+            {item.image && (
               <img
-                src="/engagement.jpg"
+                src={item.image}
                 alt={PublicEngagement.name}
                 className="hidden sm:flex max-w-[350px] pl-3 shrink-0 object-cover"
-                />
+              />
+            )}
             </div>
             
           </li>

@@ -1,3 +1,5 @@
+import EngagementImage1 from "./assets/engagement.jpg";
+
 export const profile = {
   name: "Bhawana Yadav",
   initials: "BY",
@@ -15,17 +17,42 @@ export type PublicEngagementItem = {
   role: string;
   location: string;
   highlights: string[];
+  image?:string;
 };
-export const publicEngagement:PublicEngagementItem[] = [{
+export const publicEngagement:PublicEngagementItem[] = [
+{
   period: "Oct 2021 - Jun 2023",
     company: "Microsoft",
     role: "Microsoft Student Ambassador",
     location: "Kathmandu, Nepal",
     highlights: [
       "Delivered technical workshops on Azure, GitHub and Power Platform",
-      "Organised hackathons, coordinating end-to-end event delivery",
+      "Built demo projects that turned abstract concepts into hands-on tutorials",
+      "Organised and ran hackathons end-to-end, coordinating multiple stakeholders",
     ],
-}];
+    image: EngagementImage1,
+},
+{
+  period: "Jun 2018 - Nov 2019",
+    company: "DWIT News",
+    role: "News Anchor and Public Speaker",
+    location: "Kathmandu, Nepal",
+    highlights: [
+      "Presented campus, local and international tech news with confident on-screen delivery",
+      "Translated complex information into clear stories for a broad audience",
+    ],
+},
+{
+  period: "Apr 2018 - Feb 2020",
+    company: "DWIT News",
+    role: "Article Editor and Proofreader",
+    location: "Kathmandu, Nepal",
+    highlights: [
+      "Reviewed and refined writer submissions for clarity and accuracy",
+      "Streamlined editorial workflow, improving turnaround across platforms",
+    ],
+  },
+];
 export const heroCopy = {
   eyebrow: "PRODUCT FOCUSED FRONTEND ENGINEER - LONDON",
   headline:
