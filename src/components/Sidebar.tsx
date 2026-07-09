@@ -4,7 +4,7 @@ import {  IconLinkedin } from './Icons';
 
 const pages = [
   { to: '/', label: 'Home' },
-  { to: '/experience', label: 'Experience' },
+  { to: '/experience', label: 'Skills & Experiences' },
   { to: '/projects', label: 'Projects' },
   { to: '/publicEngagement', label: 'Beyond the Code' },
   { to: '/contact', label: 'Contact' },
@@ -16,7 +16,7 @@ export default function Sidebar() {
   return (
     <nav
       aria-label="Page navigation"
-      className="hidden md:flex fixed left-0 top-0 h-full w-44 flex-col justify-between border-r border-line py-6 px-5 z-20"
+      className="hidden md:flex fixed left-0 top-0 h-full max-w-content flex-col justify-between border-r border-line py-6 px-5 z-20"
     >
       <Link
         to="/"
@@ -61,7 +61,7 @@ export default function Sidebar() {
           <IconGithub className="h-4 w-4 text-muted hover:text-paper transition-colors" />
         </a> */}
         <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <IconLinkedin className="h-4 w-4 text-muted hover:text-paper transition-colors" />
+          <IconLinkedin className="h-8 w-8  hover:text-sky-950 transition-colors" />
         </a>
       </div>
     </nav>

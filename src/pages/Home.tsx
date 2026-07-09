@@ -16,7 +16,7 @@ export default function Home() {
           <p className="text-sm leading-7 text-muted max-w-[420px]">{heroCopy.body}</p>
         </div>
         <img
-  src="/profile.jpg"
+  src="/Profile.png"
   alt={profile.name}
   className="hidden md:block h-46 w-40 shrink-0 rounded-full object-cover border border-line"
 />

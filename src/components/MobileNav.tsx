@@ -2,7 +2,7 @@ import { Link, useRoute, isActivePath } from '../router';
 
 const pages = [
     { to: '/', label: 'Home' },
-  { to: '/experience', label: 'Experience' },
+  { to: '/experience', label: 'Skills & Experiences' },
   { to: '/projects', label: 'Projects' },
   { to: '/publicEngagement', label: 'Beyond the Code' },
   { to: '/contact', label: 'Contact' },
