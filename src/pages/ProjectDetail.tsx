@@ -44,7 +44,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
       </Link>
 
       <div className="flex flex-col lg:grid lg:grid-cols-[1fr_280px] lg:gap-14 xl:gap-16 lg:items-start">
-        <aside className="order-1 lg:order-2 lg:sticky lg:top-10 flex flex-col gap-6 mb-10 lg:mb-0">
+        <aside className="order-2 lg:sticky lg:top-10 flex flex-col gap-6 mt-10 lg:mt-0">
           {project.LiveDemo && (
             <a
               href={project.LiveDemo}
@@ -99,7 +99,7 @@ export default function ProjectDetail({ slug }: { slug: string }) {
           </div>
         </aside>
 
-        <div className="order-2 lg:order-1 min-w-0">
+        <div className="order-1 min-w-0">
           <div
             className="h-12 w-12 rounded-2xl flex items-center justify-center mb-6 shadow-panel"
             style={{ backgroundColor: project.iconBg }}
