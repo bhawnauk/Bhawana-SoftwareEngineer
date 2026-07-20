@@ -15,6 +15,10 @@ export default {
           soft: '#F0997B',
           deep: '#4A1B0C',
         },
+        accent: {
+          DEFAULT: '#5B8A8E',
+          soft: '#8FB8BB',
+        },
       },
       fontFamily: {
         display: ['"Fraunces"', 'serif'],
@@ -23,6 +27,12 @@ export default {
       },
       maxWidth: {
         content: '920px',
+      },
+      boxShadow: {
+        panel: '0 1px 0 0 rgba(242,242,240,0.04) inset, 0 8px 24px -12px rgba(0,0,0,0.6)',
+      },
+      backgroundImage: {
+        'radial-ember': 'radial-gradient(circle at 30% 20%, rgba(216,90,48,0.15), transparent 60%)',
       },
     },
   },

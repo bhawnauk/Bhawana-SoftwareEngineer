@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link, useRoute, isActivePath } from '../router';
 
 const pages = [
@@ -19,8 +20,15 @@ export default function MobileNav() {
       {pages.map(({ to, label }) => {
         const active = isActivePath(path, to, to === '/');
         return (
-          <Link key={to} to={to} className={`text-xs px-2 py-1 ${active ? 'text-ember-soft' : 'text-faint'}`}>
-            {label}
+          <Link key={to} to={to} className="relative text-xs px-2 py-1">
+            {active && (
+              <motion.span
+                layoutId="mobile-active-dot"
+                className="absolute -top-1 left-1/2 -translate-x-1/2 h-1 w-1 rounded-full bg-ember"
+                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+              />
+            )}
+            <span className={active ? 'text-ember-soft' : 'text-faint'}>{label}</span>
           </Link>
         );
       })}

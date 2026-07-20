@@ -8,6 +8,7 @@ export const profile = {
   location: "London, UK",
   email: "bhawnayadav.uk@gmail.com",
   linkedin: "https://www.linkedin.com/in/bhawnayadavuk",
+  github:"https://github.com/bhawnauk",
   availability: "Open to Software Engineer or Product roles",
 };
 
@@ -85,6 +86,8 @@ export type Project = {
     | "book"
     | "briefcase"
     | "stethoscope";
+    LiveDemo?: string;
+    github?: string;
 };
 
 export const projects: Project[] = [
@@ -107,6 +110,8 @@ export const projects: Project[] = [
     iconBg: "#4A1B0C",
     iconColor: "#F0997B",
     icon: "code",
+    LiveDemo: "https://textsummariser.vercel.app/",
+    github: "https://github.com/bhawnauk/Text-Summariser",
   },
   {
     slug: "tech-job-portal",
@@ -134,6 +139,7 @@ export const projects: Project[] = [
     iconBg: "#1a2e40",
     iconColor: "#85B7EB",
     icon: "briefcase",
+    github: "https://github.com/tech-job-portal",
   },
   {
     slug: "book-recommender",
@@ -154,6 +160,7 @@ export const projects: Project[] = [
     iconBg: "#3c3489",
     iconColor: "#AFA9EC",
     icon: "book",
+    github: "https://github.com/book-recommender",
   },
   {
     slug: "pickle-co-ecommerce",
@@ -174,6 +181,7 @@ export const projects: Project[] = [
     iconBg: "#253d1f",
     iconColor: "#97C459",
     icon: "cart",
+    github: "https://github.com/pickle-co-ecommerce",
   },
   {
     slug: "patient-management-system",
@@ -201,6 +209,7 @@ export const projects: Project[] = [
     iconBg: "#4A1B0C",
     iconColor: "#F0997B",
     icon: "stethoscope",
+    github: "https://github.com/patient-management-system",
   },
 ];
 
