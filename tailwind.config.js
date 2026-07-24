@@ -4,16 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0E0E10',
-        panel: '#18181B',
-        line: '#232326',
-        muted: '#8A8A90',
-        faint: '#6B6B70',
-        paper: '#F2F2F0',
+        ink: '#F7F6F3',
+        panel: '#FFFFFF',
+        line: '#E3E1DA',
+        muted: '#45454C',
+        faint: '#7C7C84',
+        paper: '#14151A',
         ember: {
-          DEFAULT: '#D85A30',
-          soft: '#F0997B',
-          deep: '#4A1B0C',
+          DEFAULT: '#1B2A4A',
+          soft: '#3D5A8A',
+          deep: '#F4F6FA',
         },
         accent: {
           DEFAULT: '#5B8A8E',
@@ -29,10 +29,10 @@ export default {
         content: '920px',
       },
       boxShadow: {
-        panel: '0 1px 0 0 rgba(242,242,240,0.04) inset, 0 8px 24px -12px rgba(0,0,0,0.6)',
+        panel: '0 1px 2px 0 rgba(20,21,26,0.04), 0 8px 24px -12px rgba(20,21,26,0.12)',
       },
       backgroundImage: {
-        'radial-ember': 'radial-gradient(circle at 30% 20%, rgba(216,90,48,0.15), transparent 60%)',
+        'radial-ember': 'radial-gradient(circle at 30% 20%, rgba(27,42,74,0.08), transparent 60%)',
       },
     },
   },

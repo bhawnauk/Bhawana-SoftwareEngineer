@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from '../router';
-import { heroCopy, profile, projects } from '../data';
+import { heroCopy, profile, projects, topSkills } from '../data';
 import { IconArrow } from '../components/Icons';
 import { fadeUp, staggerContainer } from '../lib/motion';
 
@@ -61,7 +61,7 @@ export default function Home() {
         animate="show"
         className="mt-10 flex flex-wrap items-center gap-2"
       >
-        {['React', 'TypeScript', 'Tailwind CSS', 'Product Operations'].map((tag) => (
+        {topSkills.map((tag) => (
           <motion.span
             key={tag}
             variants={fadeUp}

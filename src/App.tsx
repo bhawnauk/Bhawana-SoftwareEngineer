@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import ExperiencePage from './pages/ExperiencePage';
+import SkillsPage from './pages/SkillsPage';
 import ContactPage from './pages/ContactPage';
 import PublicEngagementPage from './pages/PublicEngagement';
 
@@ -18,6 +19,7 @@ function Routes() {
   if (path === '/' || path === '') content = <Home />;
   else if (path === '/projects') content = <Projects />;
   else if (path === '/experience') content = <ExperiencePage />;
+  else if (path === '/skills') content = <SkillsPage />;
   else if (path === '/contact') content = <ContactPage />;
   else if (path === '/publicEngagement') content = <PublicEngagementPage />;
   else {

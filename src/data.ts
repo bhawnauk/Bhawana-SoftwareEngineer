@@ -65,6 +65,9 @@ export const heroCopy = {
   body: "4+ years across SaaS engineering and product operations. I've shipped production React/TypeScript features end to end, and built the reporting and process systems that let teams of 10+ run on the data those features produce.",
 };
 
+export const currentFocus =
+  "Actively working on freelance projects, and exploring new tools and techniques to keep pace with market demand.";
+
 export type Project = {
   slug: string;
   tag: string;
@@ -88,30 +91,31 @@ export type Project = {
     | "stethoscope";
     LiveDemo?: string;
     github?: string;
+    isPrivateClient?: boolean;
 };
 
 export const projects: Project[] = [
   {
     slug: "text-summariser",
-    tag: "AI TOOL",
+    tag: "AI TEXT SUMMARISATION",
     name: "Text Summariser",
-    tagline: "Cut a 10-minute read down to 30 seconds.",
+    tagline: "Turns long text into a focused summary — fully offline.",
     summary:
-      "An AI-powered summarisation tool that takes any article, report or transcript and returns a tight, accurate summary in seconds with full control over length and tone, so you get the gist without losing what matters.",
+      "A full-stack AI text summariser that turns articles, reports, and transcripts into focused summaries, powered entirely by a local LLM via Ollama — no API key or external service required.",
     problem:
-      "Reading everything in full doesn’t scale. People end up either skimming and missing key points, or reading the whole thing and losing an hour they didn’t have.",
+      "Long articles, reports, and transcripts take too long to read in full, and most summarisation tools either require sending your text to a third-party API or can't handle documents longer than a single model call.",
     approach:
-      "Built a React/TypeScript front end backed by a Node API that orchestrates requests to an LLM for summarisation. A Python service sits in front of that call to clean and chunk long input by splitting oversized documents into sentence-safe segments so nothing gets cut mid-sentence or exceeds the model’s context window. Designed the UX around trust: adjustable summary length, clear loading and error states, and no silent failures on slow or malformed input, the details that separate a working demo from something people would actually rely on.",
+      "Three independent services split the work by what each language is best at: a FastAPI (Python) processor cleans and chunks incoming text — using spaCy and tiktoken — so documents aren't limited to what fits in one model call; an Express/TypeScript API builds prompts from those chunks and talks to a locally running Ollama model (qwen2.5:1.5b), summarising each chunk individually and combining multi-chunk results into one final pass; and a React/Vite/Tailwind client handles length, tone, and format controls plus drag-and-drop file upload (.txt/.pdf/.docx). Since Ollama needs a persistent process and can't run on serverless platforms, only the client is deployed to Vercel — the API, processor, and Ollama run locally and are exposed via a Cloudflare Tunnel.",
     metrics: [
-      { label: "Summary length", value: "Adjustable" },
-      { label: "Avg response", value: "~3s" },
+      { label: "Runs on", value: "Local LLM (Ollama)" },
+      { label: "Input limit", value: "2,000 words / ~1,500-token chunks" },
     ],
-    stack: ["React", "TypeScript", "Tailwind", "Node.js", "Python", "LLM API"],
-    iconBg: "#4A1B0C",
-    iconColor: "#F0997B",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Express", "FastAPI", "Python", "Ollama"],
+    iconBg: "#3c3489",
+    iconColor: "#AFA9EC",
     icon: "code",
-    LiveDemo: "https://textsummariser.vercel.app/",
-    github: "https://github.com/bhawnauk/Text-Summariser",
+    LiveDemo:"https://text-summarisation.vercel.app/",
+    github: "https://github.com/bhawnauk/Text-Summarisation_Project",
   },
   {
     slug: "tech-job-portal",
@@ -147,22 +151,23 @@ export const projects: Project[] = [
     name: "Book Recommender",
     tagline: "Recommendations that actually get your taste.",
     summary:
-      "A recommendation tool that goes beyond star ratings and tells you a book you loved, or a genre and mood, and it surfaces titles that actually share what made that book work, not just ones tagged with the same category.",
+      "A recommendation tool that goes beyond star ratings — tell it a book you loved, or a genre and mood, and it surfaces titles that share what actually made that book work, not just ones tagged with the same category.",
     problem:
       "Star ratings and genre tags flatten everything into the same bucket. Two five-star thrillers can have nothing in common tonally, so browsing by rating alone rarely finds you the right next read.",
     approach:
-      "The recommendation logic itself is a Python service - computing similarity scores across genre, mood tags, and comparable titles is the kind of numerical, data-shaping work Python’s ecosystem is built for. It exposes a small API that the React/TypeScript front end calls for a ranked shortlist, paired with the Open Library API for book metadata and covers. Kept the UI deliberately fast and low-friction-browse, get a shortlist, save it. Since the value is in the quality of the suggestion, not a feature-heavy interface around it.",
+      "The recommendation logic runs as a Python/FastAPI service — computing weighted tag-similarity scores across genre and mood is the kind of numerical, data-shaping work Python's ecosystem is built for. A React/TypeScript frontend (Vite, hand-written CSS) calls this API for a ranked shortlist, with each pick paired to a craft-specific one-line reason. Tag-similarity scoring is deterministic and always runs; when a local LLM (via Ollama) is configured, it optionally re-ranks and re-explains the shortlist for a sharper fit. Kept the UI deliberately fast and low-friction — browse, get a shortlist, save it — since the value is in the quality of the suggestion, not a feature-heavy interface around it.",
     metrics: [
-      { label: "Match logic", value: "Genre + similarity" },
-      { label: "Data source", value: "Open Library API" },
+      { label: "Match logic", value: "Weighted tag similarity" },
+      { label: "Catalog", value: "30 hand-checked books" },
     ],
-    stack: ["React", "TypeScript", "Tailwind", "Python", "Open Library API"],
+    stack: ["React", "TypeScript", "Vite", "FastAPI", "Python"],
     iconBg: "#3c3489",
     iconColor: "#AFA9EC",
     icon: "book",
-    github: "https://github.com/book-recommender",
-  },
-  {
+    LiveDemo:"https://book-recommender-mu-sage.vercel.app",
+    github: "https://github.com/bhawnauk/Book-Recommendation-Project",
+  }
+,  {
     slug: "pickle-co-ecommerce",
     tag: "E-COMMERCE · PAYMENTS",
     name: "Pickle Co. Storefront",
@@ -181,7 +186,7 @@ export const projects: Project[] = [
     iconBg: "#253d1f",
     iconColor: "#97C459",
     icon: "cart",
-    github: "https://github.com/pickle-co-ecommerce",
+    isPrivateClient: true,
   },
   {
     slug: "patient-management-system",
@@ -209,7 +214,7 @@ export const projects: Project[] = [
     iconBg: "#4A1B0C",
     iconColor: "#F0997B",
     icon: "stethoscope",
-    github: "https://github.com/patient-management-system",
+    isPrivateClient: true,
   },
 ];
 
@@ -267,18 +272,83 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
+export type SkillCategory = {
+  label: string;
+  items: string[];
+  icon: "components" | "server" | "link" | "database" | "layers" | "sparkles" | "creditcard" | "shield" | "tool" | "briefcase";
+  iconBg: string;
+  iconColor: string;
+};
+
+export const topSkills = ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL"];
+
+export const skillCategories: SkillCategory[] = [
+  {
+    label: "Frontend",
+    items: ["React", "TypeScript", "Vite", "Tailwind CSS", "React Router", "React Hook Form", "Framer Motion"],
+    icon: "components",
+    iconBg: "#3c3489",
+    iconColor: "#AFA9EC",
+  },
+  {
+    label: "Backend",
+    items: ["Node.js", "Express", "Python", "FastAPI", "Pydantic"],
+    icon: "server",
+    iconBg: "#1a2e40",
+    iconColor: "#85B7EB",
+  },
+  {
+    label: "API design",
+    items: ["REST API design", "GraphQL"],
+    icon: "link",
+    iconBg: "#3c3489",
+    iconColor: "#AFA9EC",
+  },
+  {
+    label: "Databases",
+    items: ["PostgreSQL"],
+    icon: "database",
+    iconBg: "#1a2e40",
+    iconColor: "#85B7EB",
+  },
+  {
+    label: "Data engineering / scraping",
+    items: ["BeautifulSoup", "Web scraping", "ETL / data normalisation", "Scheduled jobs"],
+    icon: "layers",
+    iconBg: "#253d1f",
+    iconColor: "#97C459",
+  },
+  {
+    label: "AI / LLM",
+    items: ["Local LLM integration (Ollama)", "spaCy", "tiktoken", "Prompt engineering"],
+    icon: "sparkles",
+    iconBg: "#4A1B0C",
+    iconColor: "#F0997B",
+  },
+  {
+    label: "Payments & third-party integration",
+    items: ["Stripe API"],
+    icon: "creditcard",
+    iconBg: "#253d1f",
+    iconColor: "#97C459",
+  },
+  {
+    label: "Security / access control",
+    items: ["Role-based access control (RBAC)", "Zod (schema validation)", "Helmet", "Rate limiting"],
+    icon: "shield",
+    iconBg: "#4A1B0C",
+    iconColor: "#F0997B",
+  },
+  {
+    label: "Other",
+    items: ["Git", "Cloudflare Tunnel", "httpx"],
+    icon: "tool",
+    iconBg: "#1a2e40",
+    iconColor: "#85B7EB",
+  },
+];
+
 export const skills = {
-  engineering: [
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Jest",
-    "React Testing Library",
-    "REST APIs",
-    "GitHub Actions",
-    "Jenkins",
-    "Atomic design",
-  ],
   operations: [
     "Product Operations",
     "Stakeholder Management",
@@ -286,6 +356,14 @@ export const skills = {
     "KPI Dashboards",
     "Process Design",
   ],
+};
+
+export const operationsCategory: SkillCategory = {
+  label: "Operations",
+  items: skills.operations,
+  icon: "briefcase",
+  iconBg: "#3c3489",
+  iconColor: "#AFA9EC",
 };
 
 export const certifications = [

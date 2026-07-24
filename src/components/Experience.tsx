@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { experience, skills, certifications, education } from '../data';
+import { experience, certifications, education, currentFocus } from '../data';
 import { fadeUp, staggerContainer } from '../lib/motion';
 
 export default function Experience() {
@@ -7,6 +7,22 @@ export default function Experience() {
     <section>
       <p className="text-xs tracking-wide text-ember mb-2">EXPERIENCE</p>
       <h2 className="font-display text-2xl md:text-[28px] text-paper mb-8">Six years, five roles, one throughline.</h2>
+
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="show"
+        className="flex items-start gap-3 bg-panel border border-line rounded-xl p-4 lg:p-5 mb-10"
+      >
+        <span className="relative mt-1.5 flex h-2 w-2 shrink-0">
+          <span className="absolute inline-flex h-full w-full rounded-full bg-ember opacity-40 animate-ping" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-ember" />
+        </span>
+        <div>
+          <p className="text-[10px] tracking-wide text-ember mb-1">CURRENTLY</p>
+          <p className="text-[13px] leading-6 text-muted">{currentFocus}</p>
+        </div>
+      </motion.div>
 
       <motion.ol
         variants={staggerContainer}
@@ -50,29 +66,6 @@ export default function Experience() {
       </motion.ol>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 mt-12 pt-10 border-t border-line">
-        <div>
-          <p className="text-xs text-ember  mb-3">ENGINEERING</p>
-          <div className="flex flex-wrap gap-1.5">
-            {skills.engineering.map((s) => (
-              <span key={s} className="text-[11px] px-2.5 py-1 rounded-full bg-panel text-muted">
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div>
-          <p className="text-xs text-ember  mb-3">OPERATIONS</p>
-          <div className="flex flex-wrap gap-1.5">
-            {skills.operations.map((s) => (
-              <span key={s} className="text-[11px] px-2.5 py-1 rounded-full bg-panel text-muted">
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 mt-10">
         <div>
           <p className="text-xs text-ember  mb-3">CERTIFICATIONS</p>
           <ul className="flex flex-col gap-1.5">

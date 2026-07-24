@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link, useRoute, isActivePath } from '../router';
-import { IconHome, IconBriefcase, IconComponents, IconUsers, IconMail } from './Icons';
+import { IconHome, IconBriefcase, IconChart, IconComponents, IconUsers, IconMail } from './Icons';
 
 const pages = [
   { to: '/', label: 'Home', icon: IconHome },
   { to: '/experience', label: 'Experience', icon: IconBriefcase },
+  { to: '/skills', label: 'Skills', icon: IconChart },
   { to: '/projects', label: 'Projects', icon: IconComponents },
   { to: '/publicEngagement', label: 'Beyond', icon: IconUsers },
   { to: '/contact', label: 'Contact', icon: IconMail },

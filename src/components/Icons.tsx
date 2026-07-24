@@ -112,6 +112,80 @@ export function IconBriefcase({ className, style }: IconProps) {
   );
 }
 
+export function IconServer({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      <rect x="2" y="3" width="20" height="7" rx="1.5" />
+      <rect x="2" y="14" width="20" height="7" rx="1.5" />
+      <line x1="6" y1="6.5" x2="6.01" y2="6.5" />
+      <line x1="6" y1="17.5" x2="6.01" y2="17.5" />
+    </svg>
+  );
+}
+
+export function IconLink({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+    </svg>
+  );
+}
+
+export function IconDatabase({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      <ellipse cx="12" cy="5" rx="8" ry="3" />
+      <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+      <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+    </svg>
+  );
+}
+
+export function IconLayers({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
+    </svg>
+  );
+}
+
+export function IconSparkles({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} style={style} aria-hidden="true">
+      <path d="M11.06 2.4a1 1 0 0 1 1.88 0l1.58 4.4a3 3 0 0 0 1.78 1.78l4.4 1.58a1 1 0 0 1 0 1.88l-4.4 1.58a3 3 0 0 0-1.78 1.78l-1.58 4.4a1 1 0 0 1-1.88 0l-1.58-4.4a3 3 0 0 0-1.78-1.78l-4.4-1.58a1 1 0 0 1 0-1.88l4.4-1.58a3 3 0 0 0 1.78-1.78Z" />
+    </svg>
+  );
+}
+
+export function IconCreditCard({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      <rect x="2" y="5" width="20" height="14" rx="2" />
+      <line x1="2" y1="10" x2="22" y2="10" />
+    </svg>
+  );
+}
+
+export function IconShield({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      <path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function IconTool({ className, style }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8Z" />
+    </svg>
+  );
+}
+
 export function IconStethoscope({ className, style }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">

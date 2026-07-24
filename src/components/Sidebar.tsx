@@ -5,7 +5,8 @@ import {  IconLinkedin } from './Icons';
 
 const pages = [
   { to: '/', label: 'Home' },
-  { to: '/experience', label: 'Skills & Experiences' },
+  { to: '/experience', label: 'Experience' },
+  { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
   { to: '/publicEngagement', label: 'Beyond the Code' },
   { to: '/contact', label: 'Contact' },
