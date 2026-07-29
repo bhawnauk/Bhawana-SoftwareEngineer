@@ -186,7 +186,8 @@ export const projects: Project[] = [
     iconBg: "#253d1f",
     iconColor: "#97C459",
     icon: "cart",
-    isPrivateClient: true,
+    LiveDemo:"https://full-stack-ecommerce-shop-with-stri.vercel.app",
+    github:"https://github.com/bhawnauk/Full-Stack-Ecommerce-shop-with-Stripe-payment"
   },
   {
     slug: "patient-management-system",
