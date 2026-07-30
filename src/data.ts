@@ -143,7 +143,8 @@ export const projects: Project[] = [
     iconBg: "#1a2e40",
     iconColor: "#85B7EB",
     icon: "briefcase",
-    github: "https://github.com/tech-job-portal",
+    github: "https://github.com/bhawnauk/Tech-Job_scraping_portal",
+    LiveDemo:"https://tech-job-scraping-portal.vercel.app"
   },
   {
     slug: "book-recommender",
